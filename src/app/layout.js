@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-neutral-900">
-        <header className="bg-black text-indigo-800 font-bold text-center text-sm">developed by @patr.wan</header>
+        <header className="bg-black text-indigo-800 font-bold text-center text-xs hover:text-indigo-300 cursor-pointer p-1">developed by @patr.wan</header>
         {children}
       </body>
     </html>

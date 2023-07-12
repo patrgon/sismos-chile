@@ -17,7 +17,7 @@ async function getData() {
 export default async function QuakeList() {
   const data = await getData();
   return (
-    <section className="flex flex-col gap-4 p-4 w-full max-w-xl">
+    <section className="flex flex-col gap-4 p-4 pt-10 w-full max-w-xl">
       {data.map((sismo) => (
         <QuakeItem sismo={sismo} />
       ))}
