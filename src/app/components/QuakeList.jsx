@@ -1,7 +1,7 @@
 import QuakeItem from "./QuakeItem";
 
 async function getData() {
-  const res = await fetch("https://api.gael.cloud/general/public/sismos");
+  const res = await fetch("https://api.gael.cloud/general/public/sismos", { next: { revalidate: 10 } });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -17,7 +17,7 @@ async function getData() {
 export default async function QuakeList() {
   const data = await getData();
   return (
-    <section className="flex flex-col gap-4 p-4 w-full max-w-md">
+    <section className="flex flex-col gap-4 p-4 w-full max-w-xl">
       {data.map((sismo) => (
         <QuakeItem sismo={sismo} />
       ))}

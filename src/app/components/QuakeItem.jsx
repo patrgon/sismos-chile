@@ -1,3 +1,5 @@
+import Date from "./Date";
+
 export default function QuakeItem({ sismo }) {
 
   const { RefGeografica, Fecha, Magnitud } = sismo;
@@ -11,7 +13,7 @@ export default function QuakeItem({ sismo }) {
       />
       <div className="flex flex-col items-center justify-center">
         <h1>{RefGeografica}</h1>
-        <p>{Fecha}</p>
+        <p className="font-bold text-center">{<Date dateString={Fecha}/>}</p>
       </div>
       <div className="flex items-center p-4">
         <h1 className="font-bold text-3xl">{Magnitud}</h1>
